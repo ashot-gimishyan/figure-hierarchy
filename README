@@ -1,0 +1,16 @@
+Как создать статическую библиотеку?
+
+> g++ -c test.cpp -o test.o
+> g++ -c Real.cpp -o Real.o
+> ar cr libreal.a Real.o
+> g++ test.o libreal.a -o a.out
+> rm *.o
+> rm *.a
+> ./a.out
+
+
+Как создать динамическую библиотеку?
+
+> g++ -fPIC -shared Real.cpp -o Real.so
+> g++ test.cpp -ldl -o test
+> ./test
